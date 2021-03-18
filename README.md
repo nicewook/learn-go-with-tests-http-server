@@ -33,7 +33,18 @@
 ```
 2. request `r.URL.Path` 에서 플레이어의 이름을 추출해내자. 이름으로 분기해서 리턴하게 하자. 
 3. 리팩터링 하자. 함수 추출, 반복 줄이기 (DRY up)
-4. t.Helper() 좀 더 알아보자. 
+4. [t.Helper() link1](https://golang.org/pkg/testing/#T.Helper) 좀 더 알아보자. 
+```
+func (c *T) Helper() - 느낌상 함수가 호출된 것이 아니라 인라인 된 것처럼 동작하는가 보다. 
+Helper marks the calling function as a test helper function. When printing file and line information, that function will be skipped. Helper may be called simultaneously from multiple goroutines.
+```
+5. [t.Helper() link2](https://about.sourcegraph.com/go/advanced-testing-in-go/) 또 다른 설명. 실패했을때 에러를 리턴하지 않고 바로 함수 내에서 실패하게 하여 출력을 이쁘게 만든다. 
+```
+Never return errors. Just pass in *testing.T and fail.
+By not returning errors, usage is much prettier, since you don't have a bunch of visual overhead from error handling code in your tests since error checking is gone.
+Used to make tests clear on what they’re testing vs what is boilerplate
+Call t.Helper() for cleaner failure output (Go 1.9)
+```
 
 ## v3. 
 
