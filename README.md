@@ -1,6 +1,6 @@
 # HTTP Server
 
-- reference: https://github.com/nicewook/learn-go-with-tests-ko/blob/master/http-server.md
+- reference: https://github.com/nicewook/learn-go-with-tests-ko/blob/master/ko-KR/http-server.md
 
 ## v1
 
